@@ -3,9 +3,13 @@
     <nav class="col-12">
 
     </nav>
-    <div class="container">
+    <div class="container mt-5">
       <div class="row">
-        <AlbumCard/>
+        <AlbumCard
+        v-for="(elem,index) in albumData" 
+        :key="index"
+        :album="elem"
+        />
       </div>
     </div>
   </div>
@@ -26,6 +30,7 @@ export default {
     return{
       albumData: '',
     }
+    
   },
 
   mounted(){
@@ -36,7 +41,7 @@ export default {
     getApi(link){
       axios.get(link)
       .then((response) => {
-        this.albumData = response.data
+        this.albumData = response.data.response
       })
     }
   }
