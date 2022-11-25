@@ -5,7 +5,7 @@
     </nav>
     <div class="container">
       <div class="row">
-        
+        <AlbumCard/>
       </div>
     </div>
   </div>
@@ -13,12 +13,32 @@
 
 <script>
 
-// import axios from 'axios'
+import AlbumCard from './components/AlbumCard';
+import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
-    
+    AlbumCard
+  },
+
+  data(){
+    return{
+      albumData: '',
+    }
+  },
+
+  mounted(){
+    this.getApi('https://flynn.boolean.careers/exercises/api/array/music')
+  },
+
+  methods:{
+    getApi(link){
+      axios.get(link)
+      .then((response) => {
+        this.albumData = response.data
+      })
+    }
   }
 }
 </script>
