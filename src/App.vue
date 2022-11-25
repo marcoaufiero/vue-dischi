@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav class="col-12">
-
+      <img src="./assets/logo.svg" alt="">
     </nav>
     <div class="container mt-5">
       <div class="row">
@@ -57,6 +57,12 @@ export default {
   nav{
     background-color: #2E3A46;
     height: 70px;
+
+    img{
+      height: 50px;
+      margin: 10px 20px;
+    }
+
   }
 }
 </style>
