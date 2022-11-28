@@ -2,11 +2,11 @@
     <main>
         <div class="container mt-5">
             <select name="" id="">
-                <option value="">genre</option>
+                <option v-for="(elem,index) in arrayGenre" :key="index" value="">{{elem}}</option>
             </select>
         </div>
         
-        <AlbumList/>
+        <AlbumList @emitGenre="methodsGenre"/>
     </main>
 </template>
 
@@ -20,8 +20,21 @@ import AlbumList from './AlbumList.vue'
             AlbumList
         },
 
+        data(){
+            return{
+                arrayGenre: [],
+            }
+        },
+
         mounted(){
             
+        },
+
+        methods: {
+            
+            methodsGenre(arrayGenre){
+                this.arrayGenre = arrayGenre
+            }
         }
         
     }
