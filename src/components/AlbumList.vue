@@ -2,7 +2,7 @@
     <div class="container mt-3">
       <div class="row">
         <AlbumCard
-        v-show="elem.genre == genreChoice  || genreChoice == ''"
+        v-show="elem.genre == genreChoice  || genreChoice == 'Qualsiasi' "
         v-for="(elem,index) in albumData"
         :key="index"
         :album="elem"

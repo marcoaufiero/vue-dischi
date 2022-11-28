@@ -2,6 +2,7 @@
     <main>
         <div class="container mt-5">
             <select name="" id="" v-model="selectedGenre">
+                <option value="Qualsiasi">Qualsiasi</option>
                 <option v-for="(elem,index) in arrayGenre" :key="index" :value="elem">{{elem}}</option>
             </select>
         </div>
@@ -23,7 +24,7 @@ import AlbumList from './AlbumList.vue'
         data(){
             return{
                 arrayGenre: [],
-                selectedGenre: ''
+                selectedGenre: 'Qualsiasi'
             }
         },
 
