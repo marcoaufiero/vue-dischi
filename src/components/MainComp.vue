@@ -6,7 +6,7 @@
             </select>
         </div>
         
-        <AlbumList @emitGenre="methodsGenre"/>
+        <AlbumList @emitGenre="methodsGenre" :genreChoice="selectedGenre"/>
     </main>
 </template>
 

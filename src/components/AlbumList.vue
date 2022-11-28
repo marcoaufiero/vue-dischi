@@ -2,7 +2,8 @@
     <div class="container mt-3">
       <div class="row">
         <AlbumCard
-        v-for="(elem,index) in albumData" 
+        v-show="elem.genre == genreChoice  || genreChoice == ''"
+        v-for="(elem,index) in albumData"
         :key="index"
         :album="elem"
         />
@@ -17,9 +18,13 @@ import axios from 'axios'
 
 export default {
     name: 'AlbumList',
+      props: {
+        genreChoice: String,
+      },
       components: {
           AlbumCard
       },
+      
       
       data(){
           return{
